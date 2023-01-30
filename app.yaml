@@ -1,0 +1,5 @@
+runtime: php81
+env_variables:
+   APP_KEY: base64:UMxp5zbglNq1X4AmsDbD3ITpvZAp1AS/sjaOzE3FseA=
+   APP_STORAGE: /tmp
+   VIEW_COMPILED_PATH: /tmp
