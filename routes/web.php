@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Livewire\Page\Auth\ForgotPassword;
+use App\Http\Livewire\Page\Auth\Login;
+use App\Http\Livewire\Page\Auth\Register;
+use App\Http\Livewire\Page\Dashboard\HomePage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Login::class)->name('welcome');
+Route::get('/login', Login::class)->name('auth.login');
+Route::get('/register', Register::class)->name('auth.register');
+Route::get('/forgot', ForgotPassword::class)->name('auth.forgot');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', App\Http\Controllers\HomeController::class, 'index')->name('home');
+Route::get('/home', HomePage::class)->name('home');
